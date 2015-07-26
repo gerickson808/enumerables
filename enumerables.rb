@@ -101,11 +101,6 @@ module Enumerable
 
 	def my_inject(start = nil)
 		return self unless block_given?
-		#takes Object::self, optional start point,
-		#and a block (passed to with yield)
-		#and runs block on each item in self
-		#starting with start point or first item
-		puts "Start is #{start}"
 		p self[0]
 		if start.is_a? Fixnum
 			result = start
@@ -114,7 +109,6 @@ module Enumerable
 			result = self[0]
 			initial = 1
 		end
-		puts "Result is #{result}"
 		self.my_each_with_index do |number,i|
 			result = yield(result,number) if i >= initial
 		end
