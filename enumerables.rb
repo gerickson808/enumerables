@@ -129,13 +129,3 @@ def multiply_els(array)
 	array.my_inject {|result, number| result * number}
 
 end
-
-array = [3,5,7,9,11]
-
-map_proc = Proc.new {|n| n*2}
-
-p array.my_map {|n| n*2}
-p array.my_map_proc(map_proc)
-
-p array.my_map_proc {|n| n*2}
-p array.my_map_proc(map_proc){|n| n*2}
